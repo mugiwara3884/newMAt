@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mad Lib</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Create a Mad Lib</h1>
+    <form id="madLibForm" action="http://localhost:8080/submit" method="POST">
+      <label for="noun">Noun:</label>
+      <input type="text" id="noun" name="noun" required><br>
+
+      <label for="verb">Verb:</label>
+      <input type="text" id="verb" name="verb" required><br>
+
+      <label for="adjective">Adjective:</label>
+      <input type="text" id="adjective" name="adjective" required><br>
+
+      <label for="place">Place:</label>
+      <input type="text" id="place" name="place" required><br>
+
+      <label for="pluralNoun">Plural Noun:</label>
+      <input type="text" id="pluralNoun" name="pluralNoun" required><br>
+
+      <button type="button" onclick="fillRandom()">Fill Random Words</button>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <footer>
+    <p><strong>Addendum:</strong></p>
+    <p><strong>Problem:</strong> The user needs to input a series of words (noun, verb, adjective, place, and plural noun) to generate a fun Mad Lib story. The task also involves ensuring that all form fields are validated, the generated result is dynamic, and the entire application is visually appealing.</p>
+    <p><strong>Solution:</strong> A form was created to collect user inputs, which were then processed and validated by a backend Express server. CSS styling was applied to ensure the form and result page were visually pleasing and easy to navigate.</p>
+    <p><strong>Challenges:</strong> Ensuring all fields were validated and properly handling static file serving were key challenges, which were resolved by implementing basic validation on the server side and proper file handling for CSS and other assets.</p>
+    <p><strong>Improvements:</strong> The design was made responsive for different screen sizes, and user feedback was provided when inputs were missing or incorrect. Random word generation was added for faster interaction.</p>
+    <p>Last updated: <span id="lastModified"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById('lastModified').textContent = document.lastModified;
+
+    function fillRandom() {
+      const randomWords = {
+        noun: ['cat', 'dog', 'robot', 'wizard', 'tree'],
+        verb: ['run', 'jump', 'fly', 'dance', 'sing'],
+        adjective: ['happy', 'sad', 'angry', 'colorful', 'giant'],
+        place: ['forest', 'city', 'castle', 'beach', 'space'],
+        pluralNoun: ['apples', 'books', 'stars', 'birds', 'cars'],
+      };
+
+      document.getElementById('noun').value = randomWords.noun[Math.floor(Math.random() * 5)];
+      document.getElementById('verb').value = randomWords.verb[Math.floor(Math.random() * 5)];
+      document.getElementById('adjective').value = randomWords.adjective[Math.floor(Math.random() * 5)];
+      document.getElementById('place').value = randomWords.place[Math.floor(Math.random() * 5)];
+      document.getElementById('pluralNoun').value = randomWords.pluralNoun[Math.floor(Math.random() * 5)];
+    }
+  </script>
+</body>
+</html>
