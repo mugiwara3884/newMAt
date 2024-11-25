@@ -17,7 +17,7 @@ module.exports = (req, res) => {
                 return res.status(400).send(`
                     <h1>Error: Incomplete Form</h1>
                     <p>Please fill in all the fields!</p>
-                    <a href="/">Go Back</a>
+                    <a href="/ITC505/lab-7/index.html">Go Back</a>
                 `);
             }
 
