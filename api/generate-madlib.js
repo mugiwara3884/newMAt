@@ -30,8 +30,8 @@ module.exports = (req, res) => {
             return res.status(200).send(`
                 <h1>Your Mad Lib</h1>
                 <p>${madLib}</p>
-                <a href="/">Create Another</a>
-            `);
+                <a href="/ITC505/lab-7/index.html">Create Another</a>
+                `);
         });
     } else {
         res.status(405).send('Method Not Allowed');
