@@ -10,7 +10,7 @@ server.use(logger('dev'));
 server.use(express.static(path.join(__dirname, 'public')));
 
 // Route to handle mad lib submission
-server.post('/api/generate-madlib', (req, res) => {
+server.post('/generate-madlib', (req, res) => {
     const { noun, verb, adjective, place, pluralNoun } = req.body;
 
     // Validate input
