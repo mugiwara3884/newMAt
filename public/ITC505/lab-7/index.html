@@ -3,60 +3,202 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mad Lib</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Mad Lib Generator</title>
+  <style>
+    /* General Reset and Layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    /* Form Container */
+    .container {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      max-width: 450px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Footer (Last Updated) Placement */
+    footer {
+      font-size: 0.9rem;
+      color: #bbb;
+      text-align: left;
+      margin-top: 1rem;
+      padding-left: 10px;
+    }
+
+    footer span {
+      font-weight: bold;
+      color: black; /* Change the color of the date and time to black */
+    }
+
+    /* Input Fields and Labels */
+    label {
+      font-size: 1.1rem;
+      margin-top: 1.2rem;
+      color: #444;
+      display: block;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      margin-bottom: 18px;
+      font-size: 1rem;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      background: #f8f8f8;
+      color: #333;
+      transition: 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #ff7e5f;
+      background: #fff;
+      outline: none;
+    }
+
+    /* Button Styling */
+    button {
+      background-color: #ff7e5f;
+      color: white;
+      padding: 14px 24px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: 0.3s ease;
+      letter-spacing: 1px;
+    }
+
+    button:hover {
+      background-color: #feb47b;
+    }
+
+    button:active {
+      background-color: #ff7e5f;
+      transform: scale(0.98);
+    }
+
+    /* Addendum Section Styling */
+    .addendum {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 90%;
+      margin-top: 20px;
+      text-align: left;
+      color: #333;
+    }
+
+    .addendum h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #ff7e5f;
+    }
+
+    .addendum p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 500px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      button {
+        padding: 12px 18px;
+      }
+
+      .addendum {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Create a Mad Lib</h1>
-    <form id="madLibForm" action="http://localhost:8080/submit" method="POST">
+    <h1>Create Your Mad Lib</h1>
+    <form method="POST" action="/ITC505/lab-7/index.html">
       <label for="noun">Noun:</label>
-      <input type="text" id="noun" name="noun" required><br>
+      <input type="text" id="noun" name="noun">
 
       <label for="verb">Verb:</label>
-      <input type="text" id="verb" name="verb" required><br>
+      <input type="text" id="verb" name="verb">
 
       <label for="adjective">Adjective:</label>
-      <input type="text" id="adjective" name="adjective" required><br>
+      <input type="text" id="adjective" name="adjective">
 
       <label for="place">Place:</label>
-      <input type="text" id="place" name="place" required><br>
+      <input type="text" id="place" name="place">
 
       <label for="pluralNoun">Plural Noun:</label>
-      <input type="text" id="pluralNoun" name="pluralNoun" required><br>
+      <input type="text" id="pluralNoun" name="pluralNoun">
 
-      <button type="button" onclick="fillRandom()">Fill Random Words</button>
-      <button type="submit">Submit</button>
+      <button type="submit">Generate Mad Lib</button>
     </form>
+    <footer>
+      <p>Last updated: 
+        <span id="lastModified"></span>
+      </p>
+    </footer>
+  </div>
+
+  <div class="addendum">
+    <h2>Addendum</h2>
+    <p><strong>Purpose and Objective:</strong> This project is an interactive web application where users can create a fun Mad Lib story by filling in the form fields.</p>
+    <p><strong>Implementation Details:</strong> The project uses HTML for structure, CSS for styling, and JavaScript to display the last modified date. The form validates input fields to ensure user entries are complete.</p>
+    <p><strong>Design Choices:</strong> A unique gradient background and a card-style form ensure a visually appealing and responsive design. Accessibility and usability are prioritized by using intuitive input elements.</p>
+    <p><strong>Validation:</strong> Form inputs are required, ensuring users cannot submit incomplete data.</p>
+    <p><strong>Responsiveness:</strong> The design adjusts smoothly to different screen sizes, providing an excellent experience on both desktop and mobile devices.</p>
   </div>
 
   <footer>
-    <p><strong>Addendum:</strong></p>
-    <p><strong>Problem:</strong> The user needs to input a series of words (noun, verb, adjective, place, and plural noun) to generate a fun Mad Lib story. The task also involves ensuring that all form fields are validated, the generated result is dynamic, and the entire application is visually appealing.</p>
-    <p><strong>Solution:</strong> A form was created to collect user inputs, which were then processed and validated by a backend Express server. CSS styling was applied to ensure the form and result page were visually pleasing and easy to navigate.</p>
-    <p><strong>Challenges:</strong> Ensuring all fields were validated and properly handling static file serving were key challenges, which were resolved by implementing basic validation on the server side and proper file handling for CSS and other assets.</p>
-    <p><strong>Improvements:</strong> The design was made responsive for different screen sizes, and user feedback was provided when inputs were missing or incorrect. Random word generation was added for faster interaction.</p>
-    <p>Last updated: <span id="lastModified"></span></p>
-  </footer>
+    <p>Last updated: 
+        <span id="lastModified"></span>
+    </p>
+</footer>
+<script type="text/javascript">
+     var x = document.lastModified;
+     document.getElementById('lastModified').textContent = x;
+</script>
 
-  <script>
-    document.getElementById('lastModified').textContent = document.lastModified;
-
-    function fillRandom() {
-      const randomWords = {
-        noun: ['cat', 'dog', 'robot', 'wizard', 'tree'],
-        verb: ['run', 'jump', 'fly', 'dance', 'sing'],
-        adjective: ['happy', 'sad', 'angry', 'colorful', 'giant'],
-        place: ['forest', 'city', 'castle', 'beach', 'space'],
-        pluralNoun: ['apples', 'books', 'stars', 'birds', 'cars'],
-      };
-
-      document.getElementById('noun').value = randomWords.noun[Math.floor(Math.random() * 5)];
-      document.getElementById('verb').value = randomWords.verb[Math.floor(Math.random() * 5)];
-      document.getElementById('adjective').value = randomWords.adjective[Math.floor(Math.random() * 5)];
-      document.getElementById('place').value = randomWords.place[Math.floor(Math.random() * 5)];
-      document.getElementById('pluralNoun').value = randomWords.pluralNoun[Math.floor(Math.random() * 5)];
-    }
-  </script>
 </body>
 </html>

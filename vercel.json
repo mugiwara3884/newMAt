@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "/ITC505/lab-7/(.*)", "destination": "/api/server.js" }
+    ]
+  }
+  

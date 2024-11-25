@@ -1,171 +1,52 @@
-/* Reset default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Global Styles */
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 20px;
-  }
-  
-  h1 {
-    text-align: center;
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 30px;
-  }
-  
-  /* Container for the form */
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Form Styles */
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-bottom: 8px;
-    font-size: 1.1em;
-  }
-  
-  input {
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 1em;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 1.1em;
-    border: none;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  button[type="button"] {
-    background-color: #28a745;
-  }
-  
-  button[type="button"]:hover {
-    background-color: #218838;
-  }
-  
-  /* Footer Styles */
-  footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #666;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-top: 1px solid #ddd;
-  }
-  
-  footer p {
-    margin: 0;
-    font-weight: normal;
-  }
-  
-  /* Last Updated Section */
-  #lastModified {
-    font-weight: bold;
-    color: #007BFF;
-    font-style: italic;
-  }
-
-  /* Reset default styles */
-* {
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* Global Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f4f4f9;
   color: #333;
-  padding: 20px;
 }
 
-h1 {
-  text-align: center;
-  font-size: 2.5em;
-  color: #333;
-  margin-bottom: 30px;
-}
-
-/* Container for the content */
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Paragraph styles */
-p {
-  font-size: 1.2em;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-/* Button Styling */
-.button {
+/* Header */
+header {
+  background: #5d5c61;
+  color: #fff;
   padding: 10px 20px;
-  font-size: 1.1em;
-  border: none;
-  background-color: #007BFF;
+  text-align: center;
+}
+
+/* Form Styles */
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  display: block;
+  width: 100%;
+  background: #5d5c61;
   color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 20px;
-  text-align: center;
-  transition: background-color 0.3s;
-}
-
-.button:hover {
-  background-color: #0056b3;
-}
-
-/* Footer Styling */
-footer {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-  color: #666;
+  border: none;
   padding: 10px;
-  background-color: #f9f9f9;
-  border-top: 1px solid #ddd;
-}
-
-footer p {
-  margin: 0;
-  font-weight: normal;
+  border-radius: 5px;
+  cursor: poi
 }
